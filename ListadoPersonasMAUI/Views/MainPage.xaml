@@ -9,7 +9,19 @@
     <ScrollView>
         <VerticalStackLayout>
             <ListView ItemsSource="{Binding ListadoPersonas}">
-                
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <VerticalStackLayout Padding="10">
+                                <Label Text="{Binding NombreCompleto}"></Label>
+                                <HorizontalStackLayout>
+                                    <Label Text="Edad: "></Label>
+                                    <Label Text="{Binding Edad}"></Label>
+                                </HorizontalStackLayout>
+                            </VerticalStackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
             </ListView>
         </VerticalStackLayout>
     </ScrollView>

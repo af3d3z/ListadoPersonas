@@ -15,12 +15,17 @@ namespace ListadoPersonasBL
         /// </summary>
         /// <returns> Lista de Personas</returns>
         public static List<Persona> listadoPersonasBL() {
-            List<Persona> listado = ListadosDAL.listadoCompletoPersonasDAL();
+            List<Persona> listado = ListadosDAL.listadoCompletoPersonasDAL(); ;
 
             // TODO Comprobar si es jueves y antes o no de las 13:30
-            /*if (DateTime.Now.DayOfWeek == DayOfWeek.Thursday) { 
-            
-            }*/
+            if (DateTime.Now.DayOfWeek == DayOfWeek.Thursday && DateTime.Now.Hour < 13 && DateTime.Now.Minute < 30)
+            {
+                listado = listado.Take(5)
+                    .ToList();
+            }
+            else {
+                listado = listado.Skip(Math.Max(0, listado.Count - 5)).ToList();
+            }
 
             return listado;
         }

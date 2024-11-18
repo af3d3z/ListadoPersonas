@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\SGT10\DALEJ1\DALEJ1.csproj" />
+  </ItemGroup>
+
 </Project>
